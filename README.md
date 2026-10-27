@@ -63,6 +63,21 @@ tunel-del-terror-sala-en-html/
 - **Prueba realizada en `pruebas.html`:** Se diseñó una estructura alternativa con `<div id="cabecera">` y `<div id="cuerpo">` y se comparó con el uso de `<header>`, `<main>` y `<footer>`. Comprobamos cómo las herramientas de accesibilidad y lectores de pantalla identifican hitos (landmarks) de navegación directa con las etiquetas semánticas, mientras que con `<div>` carecen de contexto sobre la función del contenido.
 - **Decisión razonada:** Descartar totalmente el uso de `<div>` para la maquetación. Se establece el esqueleto semántico con `<!DOCTYPE html>`, `<html lang="es">`, `<meta charset="UTF-8">`, `<header>`, `<main data-propietario="Zombneitor123">` y `<footer>`, asegurando una página accesible, limpia y alineada con los estándares de HTML5.
 
+### Reto 2: La voz del narrador y etiquetas de texto semánticas (Miembro 2 · El Guionista)
+- **Pregunta de investigación:** ¿Qué diferencia semántica hay entre destacar importancia (`<strong>`) y poner negrita visual (`<b>`)? ¿Y entre dar énfasis al leerlo (`<em>`) y poner cursiva tipográfica (`<i>`)? ¿Con qué etiquetas representamos contenido tachado o invalidado, aclaraciones en letra pequeña y subíndices? ¿Para qué sirve un comentario HTML si no lo ve el visitante?
+- **Fuente oficial consultada:** [MDN Web Docs · Elemento strong](https://developer.mozilla.org/es/docs/Web/HTML/Element/strong), [MDN Web Docs · Elemento em](https://developer.mozilla.org/es/docs/Web/HTML/Element/em), [MDN Web Docs · Elemento mark](https://developer.mozilla.org/es/docs/Web/HTML/Element/mark), y [MDN Web Docs · Elementos de texto en línea](https://developer.mozilla.org/es/docs/Web/HTML/Element#contenido_de_texto_en_l%C3%ADnea).
+- **Prueba realizada en `pruebas.html`:** Se compararon las parejas visuales/semánticas (`<b>` vs `<strong>`, `<i>` vs `<em>`). Se verificó que los lectores de pantalla varían la entonación y volumen con `<strong>` y `<em>`, mientras que con `<b>` e `<i>` ignoran cualquier intención de énfasis. Asimismo, se comprobó el renderizado nativo de `<del>`, `<sub>`, `<mark>` y `<small>`, así como la completa invisibilidad visual de los comentarios `<!-- -->`.
+- **Decisión razonada:** En la sección `#historia` de `index.html`, se aplican exclusivamente etiquetas semánticas:
+  - `<strong>` para destacar el nombre de la obra: *«La dama del espejo»* (máxima importancia).
+  - `<br>` para separar oraciones manteniendo el párrafo temático.
+  - `<em>` para acentuar el comportamiento anómalo: *«cambia de postura»*.
+  - `<del>` para indicar la corrección del testimonio sobre la boca de la dama: *«cerrada»*.
+  - `<sub>` para la fórmula química *H<sub>2</sub>O*.
+  - `<mark>` para la advertencia prioritaria: *«No le sostengáis la mirada.»*.
+  - `<small>` para la cláusula de descargo de responsabilidad del museo.
+  - Comentario `<!-- El número está en la ficha técnica (pergamino.html) -->` para dejar una pista interna para el equipo técnico sin alterar la inmersión del visitante.
+
 ---
 
 *(Las siguientes entradas del diario serán incorporadas por los miembros correspondientes en sus respectivos pasos).*
+
