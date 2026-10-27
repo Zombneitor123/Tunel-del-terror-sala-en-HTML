@@ -1,0 +1,200 @@
+/* ==========================================================
+   Hoja de estilos: terror.css
+   Ambientación para el Túnel del Terror - LMSGI
+   ========================================================== */
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+header {
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+h1 {
+  color: #ff7518; /* Naranja calabaza */
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px rgba(255, 117, 24, 0.6);
+}
+
+h2 {
+  color: #ff4500;
+  border-left: 4px solid #8b0000;
+  padding-left: 10px;
+  margin-top: 30px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-left: 5px solid #8b0000;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+}
+
+/* Tipografía y semántica de texto */
+strong {
+  color: #e60000; /* Rojo terror */
+  font-weight: bold;
+}
+
+em {
+  color: #fca5a5; /* Cursiva clara */
+  font-style: italic;
+}
+
+del {
+  color: #737373;
+  text-decoration: line-through;
+}
+
+sub, sup {
+  font-size: 0.8em;
+}
+
+mark {
+  background-color: #8b0000; /* Fondo rojo */
+  color: #ffffff;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+
+small {
+  color: #a3a3a3;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 10px;
+}
+
+abbr {
+  text-decoration: underline dotted;
+  cursor: help;
+  color: #ff9999;
+}
+
+/* Listas */
+ol, ul {
+  padding-left: 25px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Enlaces y Navegación */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #ff7518;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid #8b0000;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #8b0000;
+  color: #ffffff;
+}
+
+/* Imágenes y figuras */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #555;
+  border-radius: 4px;
+  display: block;
+  margin: 15px 0;
+}
+
+figure {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #111;
+  border: 1px solid #444;
+  display: inline-block;
+}
+
+figcaption {
+  color: #bbb;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Iframe y Pergamino */
+iframe {
+  border: 4px solid #d4af37; /* Marco dorado */
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+  background-color: #f5eccb;
+  display: block;
+  margin-top: 15px;
+}
+
+/* Estilos específicos para pergamino.html */
+body.pergamino {
+  background-color: #f5eccb; /* Fondo color papel viejo */
+  color: #3b220c; /* Letras marrones */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  padding: 25px;
+  border: 8px double #8c6747;
+}
+
+body.pergamino h1 {
+  color: #5c1d06;
+  text-shadow: none;
+  border-bottom: 2px solid #8c6747;
+  padding-bottom: 5px;
+}
+
+body.pergamino strong {
+  color: #5c1d06;
+}
+
+body.pergamino em {
+  color: #4a2810;
+}
+
+body.pergamino abbr {
+  color: #78281f;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #444;
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ff7518;
+}
