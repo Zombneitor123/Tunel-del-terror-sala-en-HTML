@@ -38,6 +38,26 @@
     <p><small>Aclaraciones legales o letra pequeña con &lt;small&gt;.</small></p>
     <!-- Comentario de prueba: invisible para el visitante pero legible en el código -->
   </section>
+
+  <!-- ========================================================
+       PRUEBA RETO 4: Listas ordenadas y anidadas
+       ======================================================== -->
+  <section>
+    <h2>Prueba Reto 4: Listas anidadas</h2>
+    <p>La lista ordenada contiene los pasos; la lista de normas sin orden va dentro del elemento que las introduce:</p>
+    <ol>
+      <li>Hablad en voz baja.</li>
+      <li>Delante del cuadro:
+        <ul>
+          <li>No lo toquéis.</li>
+          <li>No le hagáis fotos.</li>
+          <li>No os miréis en el espejo.</li>
+        </ul>
+      </li>
+      <li>Salid sin correr.</li>
+    </ol>
+    <p>Prueba de error: si se coloca la lista <code>&lt;ul&gt;</code> directamente dentro de <code>&lt;ol&gt;</code>, fuera de un <code>&lt;li&gt;</code>, el validador devuelve:</p>
+    <pre><code>Element “ul” not allowed as child of element “ol” in this context. (Suppressing further errors from this subtree.)</code></pre>
+  </section>
 </body>
 </html>
-

@@ -77,7 +77,10 @@ tunel-del-terror-sala-en-html/
   - `<small>` para la cláusula de descargo de responsabilidad del museo.
   - Comentario `<!-- El número está en la ficha técnica (pergamino.html) -->` para dejar una pista interna para el equipo técnico sin alterar la inmersión del visitante.
 
----
+### Reto 4: Las normas para sobrevivir y la lista anidada (Miembro 3)
+- **Pregunta de investigación:** ¿Cuándo conviene usar una lista ordenada y cuándo una no ordenada? ¿Dónde debe colocarse una lista anidada para que el HTML sea válido?
+- **Fuentes consultadas:** [MDN · Elemento `<ol>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/ol) y [MDN · Elemento `<ul>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/ul).
+- **Prueba realizada en `pruebas.html`:** Se creó una lista de pasos con `<ol>` y, dentro del segundo `<li>`, una lista de normas con `<ul>`. También se probó la estructura incorrecta colocando `<ul>` directamente dentro de `<ol>`. El validador W3C indicó: `Element “ul” not allowed as child of element “ol” in this context. (Suppressing further errors from this subtree.)`.
+- **Decisión razonada:** En `index.html`, las normas que forman una secuencia usan `<ol>`. Las prohibiciones del segundo paso usan `<ul>` porque no tienen un orden obligatorio. La lista anidada se escribe dentro del `<li>` «Delante del cuadro:», no como hija directa de `<ol>`, para respetar el modelo de contenido HTML.
 
-*(Las siguientes entradas del diario serán incorporadas por los miembros correspondientes en sus respectivos pasos).*
-
+*(Las entradas de los demás retos serán incorporadas por los miembros correspondientes en sus respectivos pasos).*
