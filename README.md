@@ -113,4 +113,12 @@ tunel-del-terror-sala-en-html/
   - `<mark>`: resalta las cifras, pero se nota mucho.
   - Comentario `<!-- -->`: no se ve en la página, así que el visitante nunca lo encontraría.
 - **Decisión:** Elijo `<abbr>` porque esconde el número pero se encuentra fácil pasando el ratón, y encaja con la historia de los números romanos. Es el número que espera el programa de 2.º.
+
+### Reto 8: Validación W3C
+- **Pregunta:** ¿Mi HTML está bien escrito? ¿Qué significan los errores del validador y por qué salen?
+- **Fuente:** [Validador W3C](https://validator.w3.org/) y [MDN · Depurar HTML](https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML).
+- **Prueba:** Subí `index.html`, `pergamino.html` y `pruebas.html` y los tres salieron sin errores. Para ver cómo funciona, pegué en el validador (text input) un código con fallos a propósito y me dio dos errores:
+  - `Element ul not allowed as child of element ol`: dentro de un `<ol>` solo pueden ir `<li>`, así que la lista de dentro tiene que ir dentro de un `<li>`.
+  - `An img element must have an alt attribute`: la imagen no tenía `alt`, y es obligatorio.
+- **Decisión:** Las páginas de la sala pasan sin errores (captura en `docs/validacion.png`). El navegador enseñaba bien el código con fallos, así que valido siempre antes de entregar para asegurarme de que está bien escrito.
   
