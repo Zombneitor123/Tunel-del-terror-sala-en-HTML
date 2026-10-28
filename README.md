@@ -103,4 +103,14 @@ tunel-del-terror-sala-en-html/
   - En `pergamino.html` se usa el atributo global `class="pergamino"` en el `<body>` para que la hoja `css/terror.css` aplique los estilos de papel antiguo y tipografía marrón sin necesidad de crear otro archivo CSS.
   - La pista (`13`) se esconde de forma semántica usando `<abbr title="13">XIII</abbr>`, permitiendo que aparezca en un *tooltip* al pasar el ratón por encima de los números romanos.
   - En `index.html`, dentro de `<section id="pergamino">`, se incrusta el documento con `<iframe src="pergamino.html" title="Ficha técnica del cuadro" width="600" height="320"></iframe>`. El atributo `title` es obligatorio por accesibilidad: sin él, un usuario con lector de pantalla solo escucharía «marco» o el nombre del archivo sin saber qué contiene ni si debe entrar a inspeccionarlo.
+
+### Reto 7: La pista escondida
+- **Pregunta:** ¿Cómo escondo el número 13 para que no se vea a simple vista pero se pueda encontrar?
+- **Fuente:** [MDN · abbr](https://developer.mozilla.org/es/docs/Web/HTML/Element/abbr) y [MDN · details](https://developer.mozilla.org/es/docs/Web/HTML/Element/details).
+- **Prueba:** En `pruebas.html` probé varias formas:
+  - `<abbr title="13">XIII</abbr>`: no se ve el 13 hasta que pasas el ratón por encima.
+  - `<details>` y `<summary>`: el 13 sale al pulsar el desplegable, pero es demasiado fácil.
+  - `<mark>`: resalta las cifras, pero se nota mucho.
+  - Comentario `<!-- -->`: no se ve en la página, así que el visitante nunca lo encontraría.
+- **Decisión:** Elijo `<abbr>` porque esconde el número pero se encuentra fácil pasando el ratón, y encaja con la historia de los números romanos. Es el número que espera el programa de 2.º.
   
