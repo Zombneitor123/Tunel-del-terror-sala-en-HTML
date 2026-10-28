@@ -78,6 +78,14 @@ tunel-del-terror-sala-en-html/
   - `<small>` para la cláusula de descargo de responsabilidad del museo.
   - Comentario `<!-- El número está en la ficha técnica (pergamino.html) -->` para dejar una pista interna para el equipo técnico sin alterar la inmersión del visitante.
 
+### Reto 3: El mapa del túnel (Enlaces y Footer)
+- **Pregunta de investigación:** ¿Cómo salto a una parte de la misma página? ¿Qué relación hay entre el enlace y el `id` de la sección? ¿Cómo enlazo a otra página de mi propio sitio? ¿Qué riesgo de seguridad implica abrir un enlace en otra pestaña y cómo se evita? ¿Qué etiquetas semánticas agrupan un menú de navegación y un pie de página?
+- **Fuente oficial consultada:** [MDN Web Docs · Elemento a](https://developer.mozilla.org/es/docs/Web/HTML/Element/a) y [MDN Web Docs · Elemento nav](https://developer.mozilla.org/es/docs/Web/HTML/Element/nav).
+- **Prueba realizada en `pruebas.html`:** Se probaron enlaces internos utilizando el identificador (`#id`), enlaces relativos a otro documento (`pergamino.html`) y enlaces externos con apertura en nueva pestaña (`target="_blank"`). Se verificó que sin `rel="noopener"`, la nueva ventana tiene acceso al objeto `window.opener` de la página de origen, pudiendo redirigirla maliciosamente (*reverse tabnabbing*).
+- **Decisión razonada:**
+  - En el `<header>` de `index.html` se crea el menú de navegación semántico mediante `<nav>` y una lista `<ul>`, enlazando a `#historia`, `#lista`, `#pergamino` y `pergamino.html`.
+  - Al final de la página, fuera de `<main>`, se incorpora el `<footer>` con los créditos del proyecto y el enlace seguro a Pixabay con `target="_blank" rel="noopener"`.
+
 ### Reto 4: Las normas para sobrevivir y la lista anidada (Miembro 3)
 - **Pregunta de investigación:** ¿Cuándo conviene usar una lista ordenada y cuándo una no ordenada? ¿Dónde debe colocarse una lista anidada para que el HTML sea válido?
 - **Fuentes consultadas:** [MDN · Elemento `<ol>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/ol) y [MDN · Elemento `<ul>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/ul).

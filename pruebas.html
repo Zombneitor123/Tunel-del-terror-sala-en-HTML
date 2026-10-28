@@ -40,6 +40,21 @@
   </section>
 
   <!-- ========================================================
+       PRUEBA RETO 3: Menú de navegación, enlaces y footer
+       ======================================================== -->
+  <section>
+    <h2>Prueba Reto 3: Enlaces y Menú de Navegación Semántico</h2>
+    <p>1. Enlace a una sección interna de la misma página mediante id:</p>
+    <p><a href="#cabecera-generica">Ir al Reto 1 (#cabecera-generica)</a></p>
+
+    <p>2. Enlace a documento interno del proyecto:</p>
+    <p><a href="pergamino.html">Abrir pergamino (pergamino.html)</a></p>
+
+    <p>3. Enlace externo con apertura en nueva pestaña y protección de seguridad:</p>
+    <p><a href="https://pixabay.com" target="_blank" rel="noopener">Visitar Pixabay (enlace seguro con target="_blank" y rel="noopener")</a></p>
+  </section>
+
+  <!-- ========================================================
        PRUEBA RETO 4: Listas ordenadas y anidadas
        ======================================================== -->
   <section>
@@ -105,6 +120,47 @@
 
     <p>D) Comentario (no se ve en la página, solo en el código fuente):</p>
     <!-- El número es 13 -->
+  </section>
+
+  <!-- ========================================================
+       PRUEBA RETO 8: Validación W3C y depuración de errores
+       ======================================================== -->
+  <section>
+    <h2>Prueba Reto 8: Validación W3C y Depuración de HTML</h2>
+    <p>Comprobación de la validez del documento con el <a href="https://validator.w3.org/">Validador W3C</a> y análisis de los errores más frecuentes detectados durante el desarrollo:</p>
+
+    <article>
+      <h3>Error 1: Anidamiento incorrecto de listas</h3>
+      <p><strong>Código incorrecto (provoca error en validador):</strong> Colocar una lista <code>&lt;ul&gt;</code> directamente como hija de <code>&lt;ol&gt;</code> sin envolverla en un elemento <code>&lt;li&gt;</code>.</p>
+      <pre><code>&lt;!-- Error W3C: Element "ul" not allowed as child of element "ol" in this context --&gt;
+&lt;ol&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Elemento mal anidado&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ol&gt;</code></pre>
+      <p><strong>Solución válida:</strong> La lista secundaria siempre debe anidarse dentro de un <code>&lt;li&gt;</code>:</p>
+      <pre><code>&lt;ol&gt;
+  &lt;li&gt;Elemento principal
+    &lt;ul&gt;
+      &lt;li&gt;Elemento secundario correctamente anidado&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+    </article>
+
+    <article>
+      <h3>Error 2: Falta de atributo obligatorio de accesibilidad</h3>
+      <p><strong>Código incorrecto (provoca error en validador):</strong> Insertar una imagen sin el atributo <code>alt</code>.</p>
+      <pre><code>&lt;!-- Error W3C: An "img" element must have an "alt" attribute --&gt;
+&lt;img src="img/retrato.jpg"&gt;</code></pre>
+      <p><strong>Solución válida:</strong> Añadir siempre una descripción alternativa textual para lectores de pantalla y casos donde falle la carga del recurso:</p>
+      <pre><code>&lt;img src="img/retrato.jpg" alt="Retrato antiguo de una mujer pálida" width="300"&gt;</code></pre>
+    </article>
+
+    <article>
+      <h3>Conclusión y estado de validación</h3>
+      <p>Tras subsanar los errores deliberados de prueba, tanto <code>index.html</code> como <code>pergamino.html</code> y <code>pruebas.html</code> superan con éxito la validación oficial del W3C sin errores ni advertencias (captura acreditativa disponible en <code>docs/validacion.png</code>).</p>
+    </article>
   </section>
 </body>
 </html>
