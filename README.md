@@ -86,8 +86,21 @@ tunel-del-terror-sala-en-html/
 
 *(Las entradas de los demás retos serán incorporadas por los miembros correspondientes en sus respectivos pasos).*
 
-### Reto 5: Los retratos y las imágenes accesibles (Miembro 4)
-- **Pregunta de investigación:** ¿Para qué sirven `alt`, `width`, `<figure>` y `<figcaption>` al incluir imágenes en HTML?
-- **Fuentes consultadas:** [MDN · Elemento `<img>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/img) y [MDN · Elemento `<figure>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/figure).
-- **Prueba realizada:** Se añadieron las imágenes locales `img/retrato.jpg` y `img/espejo.jpg` con sus descripciones alternativas y anchos indicados; se agrupó el espejo y su pie de foto en `<figure>`.
-- **Decisión razonada:** El texto alternativo describe la información visual a quienes no pueden verla o cuando el archivo no carga. `width` fija el ancho en píxeles sin unidad, y `<figure>` con `<figcaption>` asocia semánticamente el espejo con su pie. Se eligieron imágenes de Wikimedia Commons con licencias abiertas y se registraron sus fuentes y licencias arriba.
+### Reto 5: Los retratos y las imágenes accesibles
+- **Pregunta de investigación:** ¿Para qué sirve el texto alternativo (`alt`) si la imagen ya se ve y quién lo utiliza? ¿Qué ocurre si la ruta de la imagen (`src`) es errónea? ¿Qué aporta agrupar una imagen y su pie de foto con `<figure>` y `<figcaption>` frente a poner un `<p>` suelto debajo? ¿Por qué el atributo `width` se escribe sin unidades?
+- **Fuente oficial consultada:** [MDN Web Docs · Elemento `<img>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/img) y [MDN Web Docs · Elemento `<figure>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/figure).
+- **Prueba realizada en `pruebas.html`:** Se insertaron las imágenes `img/retrato.jpg` y `img/espejo.jpg` y se provocó deliberadamente un fallo cambiando la ruta a `img/archivo-inexistente.jpg`. Al fallar la ruta, el navegador muestra un icono de imagen rota acompañado del texto escrito en `alt`. Además, se comparó una imagen seguida de un párrafo normal frente a una envuelta en `<figure>` con `<figcaption>`.
+- **Decisión razonada:** 
+  - Se incluye un atributo `alt` descriptivo en ambas imágenes para garantizar la accesibilidad a personas que usan lectores de pantalla y como respaldo textual si falla la carga del archivo.
+  - Se escribe `width="400"` y `width="450"` como números enteros sin unidades (`px` ni `%`) porque la especificación del estándar HTML5 define que este atributo expresa siempre píxeles CSS de forma nativa (añadir `px` invalida el código en el validador W3C).
+  - Para la primera imagen (`retrato.jpg`) se usa `<img>` directamente, mientras que para la segunda (`espejo.jpg`) se emplea `<figure>` y `<figcaption>` para vincular semánticamente el espejo con su pie de foto («El espejo que cuelga frente al cuadro.»).
+
+### Reto 6: El documento secreto (`pergamino.html`) y su incrustación con `<iframe>`
+- **Pregunta de investigación:** ¿Qué partes del esqueleto HTML se mantienen en una segunda página y cuáles cambian? ¿Cómo se enlaza la misma hoja de estilos y para qué sirve el atributo global `class`? ¿Qué etiqueta permite mostrar una página web dentro de otra, qué atributos controlan su tamaño y por qué es obligatorio darle un nombre accesible con `title`?
+- **Fuente oficial consultada:** [MDN Web Docs · Atributos globales (`class`)](https://developer.mozilla.org/es/docs/Web/HTML/Global_attributes/class), [MDN Web Docs · Elemento `<abbr>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/abbr) y [MDN Web Docs · Elemento `<iframe>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/iframe).
+- **Prueba realizada en `pruebas.html`:** Se creó el documento `pergamino.html` reutilizando la estructura base (`<!DOCTYPE html>`, `<html lang="es">`, `<head>` con `<meta>` y `<link rel="stylesheet" href="css/terror.css">`), cambiando únicamente el `<title>` y aplicando `<body class="pergamino">`. Posteriormente, se probó su incrustación mediante `<iframe src="pergamino.html">` verificando el comportamiento de los atributos `title`, `width` y `height`.
+- **Decisión razonada:** 
+  - En `pergamino.html` se usa el atributo global `class="pergamino"` en el `<body>` para que la hoja `css/terror.css` aplique los estilos de papel antiguo y tipografía marrón sin necesidad de crear otro archivo CSS.
+  - La pista (`13`) se esconde de forma semántica usando `<abbr title="13">XIII</abbr>`, permitiendo que aparezca en un *tooltip* al pasar el ratón por encima de los números romanos.
+  - En `index.html`, dentro de `<section id="pergamino">`, se incrusta el documento con `<iframe src="pergamino.html" title="Ficha técnica del cuadro" width="600" height="320"></iframe>`. El atributo `title` es obligatorio por accesibilidad: sin él, un usuario con lector de pantalla solo escucharía «marco» o el nombre del archivo sin saber qué contiene ni si debe entrar a inspeccionarlo.
+  

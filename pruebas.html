@@ -59,5 +59,31 @@
     <p>Prueba de error: si se coloca la lista <code>&lt;ul&gt;</code> directamente dentro de <code>&lt;ol&gt;</code>, fuera de un <code>&lt;li&gt;</code>, el validador devuelve:</p>
     <pre><code>Element “ul” not allowed as child of element “ol” in this context. (Suppressing further errors from this subtree.)</code></pre>
   </section>
+  <!-- ========================================================
+       PRUEBA RETO 5: Imágenes, rutas rotas y figuras
+       ======================================================== -->
+  <section>
+    <h2>Prueba Reto 5: Imágenes y Figuras Semánticas</h2>
+    <p>1. Imagen estándar con texto alternativo y ancho en píxeles (sin unidades):</p>
+    <img src="img/retrato.jpg" alt="Retrato antiguo de una mujer pálida con un marco dorado" width="300">
+
+    <p>2. Prueba de ruta errónea (muestra icono de imagen rota y el texto del atributo alt):</p>
+    <img src="img/archivo-inexistente.jpg" alt="Texto alternativo visible cuando la ruta de la imagen falla" width="300">
+
+    <p>3. Agrupación semántica con figure y figcaption frente a un párrafo suelto:</p>
+    <figure>
+      <img src="img/espejo.jpg" alt="Espejo ovalado con el cristal empañado en una habitación oscura" width="350">
+      <figcaption>El espejo que cuelga frente al cuadro (asociado semánticamente con figcaption).</figcaption>
+    </figure>
+  </section>
+
+  <!-- ========================================================
+       PRUEBA RETO 6: Documento secundario e incrustación con iframe
+       ======================================================== -->
+  <section>
+    <h2>Prueba Reto 6: Incrustación con &lt;iframe&gt; y Accesibilidad</h2>
+    <p>Incrustación de documento externo con nombre accesible obligatorio (atributo <code>title</code>) y dimensiones controladas:</p>
+    <iframe src="pergamino.html" title="Ficha técnica del cuadro" width="500" height="300"></iframe>
+  </section>
 </body>
 </html>
