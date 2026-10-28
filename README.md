@@ -50,7 +50,8 @@ tunel-del-terror-sala-en-html/
 
 ## 🖼️ Capturas y Créditos
 
-- **Fotografías y recursos gráficos**: Imágenes con licencia libre procedentes de [Pixabay](https://pixabay.com).
+- **Retrato antiguo**: *Portrait of a Young Woman*, de Johannes Vermeer, dominio público. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vermeer-Portrait_of_a_Young_Woman.jpg).
+- **Espejo ovalado**: fotografía de rulenumberone2, licencia [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Arnaud%27s_restaurant,_New_Orleans,_interior_November_2013_-_Mirror.jpg).
 - **Validación de código**: W3C Markup Validation Service ([validator.w3.org](https://validator.w3.org/)).
 
 ---
@@ -84,3 +85,9 @@ tunel-del-terror-sala-en-html/
 - **Decisión razonada:** En `index.html`, las normas que forman una secuencia usan `<ol>`. Las prohibiciones del segundo paso usan `<ul>` porque no tienen un orden obligatorio. La lista anidada se escribe dentro del `<li>` «Delante del cuadro:», no como hija directa de `<ol>`, para respetar el modelo de contenido HTML.
 
 *(Las entradas de los demás retos serán incorporadas por los miembros correspondientes en sus respectivos pasos).*
+
+### Reto 5: Los retratos y las imágenes accesibles (Miembro 4)
+- **Pregunta de investigación:** ¿Para qué sirven `alt`, `width`, `<figure>` y `<figcaption>` al incluir imágenes en HTML?
+- **Fuentes consultadas:** [MDN · Elemento `<img>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/img) y [MDN · Elemento `<figure>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/figure).
+- **Prueba realizada:** Se añadieron las imágenes locales `img/retrato.jpg` y `img/espejo.jpg` con sus descripciones alternativas y anchos indicados; se agrupó el espejo y su pie de foto en `<figure>`.
+- **Decisión razonada:** El texto alternativo describe la información visual a quienes no pueden verla o cuando el archivo no carga. `width` fija el ancho en píxeles sin unidad, y `<figure>` con `<figcaption>` asocia semánticamente el espejo con su pie. Se eligieron imágenes de Wikimedia Commons con licencias abiertas y se registraron sus fuentes y licencias arriba.
